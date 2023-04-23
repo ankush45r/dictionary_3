@@ -9,20 +9,14 @@ app.use(bodyParser.json());
 const insert_ = async (data)=>{
     const collection = await dbConnect('DictData','userData');
     const find = await collection.find({phone: data.phone}).toArray();
-    console.log(find);
     if(find.length === 0){
         const result = await collection.insertMany(
-            // {brand: 'vivo', model:'U20', price: 2000}
-    
             //inserting more than one object
             [{name: data.name, phone:data.phone, password:data.password,email: data.email}]
         );
-        if(result.acknowledged) console.log('Data inserted.....');
-        else console.log('data not inserted....');
         return 1;
     }
     else{
-        console.log('data already exists....')
         return 0;
     }
 }
@@ -42,50 +36,21 @@ const client = new MongoClient(url);
 const database = 'company';
 
 async function dbConnect(database_name,collection_name) {
-    console.log('hello2');
     let result = await client.connect(); // here client.connect returns a promise
     const db = result.db(database_name);
     return db.collection(collection_name);
-    // collection.find({}).toArray().then((data) => {
-    //     console.log(data);
-    // })
-    // let response = await collection.find({}).toArray();
-    // console.log(response);
 }
-
-// const main = async ()=>{
-//     let data = await dbConnect('DictData','userData');
-//     data = await data.find().toArray();
-//     console.log(data);
-// }
-// // export default database;
-// main();
 
 
 //************************************************************************/
 app.set('view engine', 'ejs');
 app.use(express.static('views'));
 
-// app.get('/json', async (req,res)=>{
-//     let data = await dbConnect('DictData','userData');
-//     // data = await data.find().toArray();
-//     res.setHeader('Content-Type', 'application/json');
-
-
-//   // Send the file to the client
-// //   data.pipe(res);
-//     res.json(data);
-// })
-
 app.get('/signup',(req,res)=>{
     res.render('signup.ejs');
 })
 
-// app.get('/login',(req,res)=>{
-//     res.render('./Main/index.ejs');
-// })
-
-app.get('/login',async (req,res)=>{
+app.get('/login', (req,res)=>{
     res.render('login.ejs');
 })
 
@@ -93,10 +58,6 @@ app.post('/dictionary', async (req,res)=>{
     try{
         phone = req.body.phone;
         password = req.body.password;
-        console.log(phone);
-        console.log(password)
-        // phone = '7700856845';
-        // password = 'Ankush@123';
         let info;
         const collection = await dbConnect('DictData','userData');
         let data = await collection.findOne({phone : phone});
@@ -110,7 +71,6 @@ app.post('/dictionary', async (req,res)=>{
 
     }
     catch(e){
-        console.log(e);
         res.send(`<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!`);
     }
 })
@@ -125,13 +85,7 @@ app.post('/signup_', async (req,res)=>{
             email : req.body.email
 
         }
-        // const userData = await dbConnect('DictData','userData');
         const what = await insert_(signupData);
-        // res.send(action);
-        // console.log("->"+what)
-        // const collection = await dbConnect('DictData','userData');
-        // const data = await collection.findOne({phone : phone});
-        // res.render('./Login/index.ejs',{data});
         if(what == 0){
             res.send(`<h1 style="color:red;">Data you used for signup is already in use plz use different <br><br> go back and use another</h1>`);
         }
@@ -141,8 +95,7 @@ app.post('/signup_', async (req,res)=>{
         
     }
     catch(e){
-        console.log(e);
     }
 })
 
-app.listen(3000);
+app.listen(4000);
