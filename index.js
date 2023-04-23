@@ -61,6 +61,7 @@ app.post('/dictionary', async (req,res)=>{
         password = req.body.password;
         const collection = await dbConnect('DictData','userData');
         let data = await collection.findOne({phone : phone});
+    res.render('main.ejs',{data});
         if(data.password === password){
             res.render('main.ejs',{data});
 //             res.send('<h1>This is what</h1>');
