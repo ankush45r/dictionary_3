@@ -64,8 +64,8 @@ app.post('/dictionary', async (req,res)=>{
         const collection = await dbConnect('DictData','userData');
         let data = await collection.findOne({phone : phone});
         if(data.password === password){
-            data.info = '';
-            res.render('main.ejs',{data});
+//             res.render('main.ejs',{data});
+            res.send('<h1>This is what</h1>');
         }
         else{
             res.send('<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!');
