@@ -63,7 +63,7 @@ async function dbConnect(database_name,collection_name) {
 
 
 //************************************************************************/
-
+app.set('view engine', 'ejs');
 app.use(express.static('views'));
 
 // app.get('/json', async (req,res)=>{
