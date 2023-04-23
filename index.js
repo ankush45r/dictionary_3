@@ -56,26 +56,30 @@ app.get('/login', (req,res)=>{
     res.render('login.ejs');
 })
 
-app.post('/dictionary', async (req,res)=>{
-    try{
-        phone = req.body.phone;
-        password = req.body.password;
-        let info;
-        const collection = await dbConnect('DictData','userData');
-        let data = await collection.findOne({phone : phone});
-        if(data.password === password){
-//             res.render('main.ejs',{data});
-            res.send('<h1>This is what</h1>');
-        }
-        else{
-            res.send('<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!');
-        }
+// app.post('/dictionary', async (req,res)=>{
+//     try{
+//         phone = req.body.phone;
+//         password = req.body.password;
+//         let info;
+//         const collection = await dbConnect('DictData','userData');
+//         let data = await collection.findOne({phone : phone});
+//         if(data.password === password){
+// //             res.render('main.ejs',{data});
+//             res.send('<h1>This is what</h1>');
+//         }
+//         else{
+//             res.send('<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!');
+//         }
 
-    }
-    catch(e){
-        res.send(`<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!`);
-    }
-})
+//     }
+//     catch(e){
+//         res.send(`<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!`);
+//     }
+// })
+
+app.get('/dictionary',(req,res)=>{
+    res.send('<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!')
+}
 
 
 app.post('/signup_', async (req,res)=>{
