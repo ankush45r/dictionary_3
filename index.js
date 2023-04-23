@@ -57,7 +57,10 @@ app.get('/login', (req,res)=>{
 })
 
 app.post('/dictionary', async (req,res)=>{
-    res.render('main.ejs');
+    data={
+        name: "Ankush kumar"
+    }
+    res.render('main.ejs',{data});
 //     try{
 //         phone = req.body.phone;
 //         password = req.body.password;
