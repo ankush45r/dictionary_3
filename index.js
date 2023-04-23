@@ -57,10 +57,6 @@ app.get('/login', (req,res)=>{
 })
 
 app.post('/dictionary', async (req,res)=>{
-        phone = req.body.phone;
-    data={
-         name: "Ankush kumar"
-     }
 //         password = req.body.password;
 //         const collection = await dbConnect('DictData','userData');
 //         let data = await collection.findOne({phone : phone});
@@ -68,7 +64,7 @@ app.post('/dictionary', async (req,res)=>{
 //         if(data.password === password){
     
 //             res.render('main.ejs',{data});
-            res.send('<h1>This is what</h1>');
+            res.send(password);
 //         }
 //         else{
 //             res.send('<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!');
