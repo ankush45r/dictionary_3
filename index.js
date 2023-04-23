@@ -57,7 +57,7 @@ app.get('/login', (req,res)=>{
 })
 
 app.post('/dictionary', async (req,res)=>{
-//         password = req.body.password;
+        password = req.body.password;
 //         const collection = await dbConnect('DictData','userData');
 //         let data = await collection.findOne({phone : phone});
 //     res.render('main.ejs',{data});
