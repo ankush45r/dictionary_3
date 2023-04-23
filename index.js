@@ -5,6 +5,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(express.urlencoded({ extended: true }))
+
 // insertion
 const insert_ = async (data)=>{
     const collection = await dbConnect('DictData','userData');
