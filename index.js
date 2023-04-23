@@ -5,23 +5,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(express.urlencoded({ extended: true }))
-
-// insertion
-const insert_ = async (data)=>{
-    const collection = await dbConnect('DictData','userData');
-    const find = await collection.find({phone: data.phone}).toArray();
-    if(find.length === 0){
-        const result = await collection.insertMany(
-            //inserting more than one object
-            [{name: data.name, phone:data.phone, password:data.password,email: data.email}]
-        );
-        return 1;
-    }
-    else{
-        return 0;
-    }
-}
+app.use(express.urlencoded({ extended: true }));
 
 
 //......................................................................
@@ -43,6 +27,22 @@ async function dbConnect(database_name,collection_name) {
     return db.collection(collection_name);
 }
 
+// insertion
+const insert_ = async (data)=>{
+    const collection = await dbConnect('DictData','userData');
+    const find = await collection.find({phone: data.phone}).toArray();
+    if(find.length === 0){
+        const result = await collection.insertMany(
+            //inserting more than one object
+            [{name: data.name, phone:data.phone, password:data.password,email: data.email}]
+        );
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
 
 //************************************************************************/
 app.set('view engine', 'ejs');
@@ -58,13 +58,13 @@ app.get('/login', (req,res)=>{
 
 app.post('/dictionary', async (req,res)=>{
         password = req.body.password;
-//         const collection = await dbConnect('DictData','userData');
+        const collection = await dbConnect('DictData','userData');
 //         let data = await collection.findOne({phone : phone});
 //     res.render('main.ejs',{data});
 //         if(data.password === password){
     
 //             res.render('main.ejs',{data});
-            res.send(password);
+            res.send(collection);
 //         }
 //         else{
 //             res.send('<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!');
