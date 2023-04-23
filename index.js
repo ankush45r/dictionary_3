@@ -59,7 +59,7 @@ app.get('/login', (req,res)=>{
 app.post('/dictionary', async (req,res)=>{
         phone = req.body.phone;
     data={
-         name: res.body.password
+         name: "Ankush kumar"
      }
 //         password = req.body.password;
 //         const collection = await dbConnect('DictData','userData');
