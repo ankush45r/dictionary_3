@@ -57,14 +57,14 @@ app.get('/login', (req,res)=>{
 })
 
 app.post('/dictionary', async (req,res)=>{
-        password = req.body.password;
-        const collection = await dbConnect('DictData','userData');
+//         password = req.body.password;
+//         const collection = await dbConnect('DictData','userData');
 //         let data = await collection.findOne({phone : phone});
 //     res.render('main.ejs',{data});
 //         if(data.password === password){
     
 //             res.render('main.ejs',{data});
-            res.send(collection);
+//             res.send(collection);
 //         }
 //         else{
 //             res.send('<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!');
@@ -73,24 +73,24 @@ app.post('/dictionary', async (req,res)=>{
 //         name: "Ankush kumar"
 //     }
 //     res.render('main.ejs',{data});
-//     try{
-//         phone = req.body.phone;
-//         password = req.body.password;
-//         let info;
-//         const collection = await dbConnect('DictData','userData');
-//         let data = await collection.findOne({phone : phone});
-//         if(data.password === password){
-// //             res.render('main.ejs',{data});
+    try{
+        phone = req.body.phone;
+        password = req.body.password;
+        let info;
+        const collection = await dbConnect('DictData','userData');
+        let data = await collection.findOne({phone : phone});
+        if(data.password === password){
+            res.render('main.ejs',{data});
 //             res.send('<h1>This is what</h1>');
-//         }
-//         else{
-//             res.send('<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!');
-//         }
+        }
+        else{
+            res.send('<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!');
+        }
 
-//     }
-//     catch(e){
-//         res.send(`<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!`);
-//     }
+    }
+    catch(e){
+        res.send(`<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!`);
+    }
 })
 
 // app.get('/dictionary',(req,res)=>{
