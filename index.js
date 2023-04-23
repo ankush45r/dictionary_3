@@ -78,7 +78,7 @@ app.get('/login', (req,res)=>{
 // })
 
 app.get('/dictionary',(req,res)=>{
-    res.send('<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!')
+    res.render('<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!')
 }
 
 
