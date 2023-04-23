@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: purple;
+}
+
+.sign--up--login{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.btn--login--page{
+    width: 15vw;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(48, 48, 75);
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn--login--page:hover{
+    color: white;
+    background-color: rgb(64, 64, 97);
+}
+
+.kanafusiContainer{
+    display: flex;
+    opacity: 0;
+    position: relative;
+
+}
+
+.guide h2{
+    text-align: center;
+}
+
+.guide ul{
+    margin-left: 10px;
+}
+
+.guide{
+    width: 50vh;
+    height: 80vh;
+    position: absolute;
+    top: 16%;
+    left: 10%;
+    background-color: yellow;
+    z-index: 10;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.guideOpacity{
+    opacity: 0;
+    z-index: 0;
+}
+
+.guideTransition{
+    transition: 0.5s ease-in-out;
+}
+
+.content{
+    width: 80%;
+    height: auto;
+    background-color: brown;
+}
+
+.newFriend{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    position: absolute;
+    left: 78vw;
+    top: 4.5vw;
+    overflow: scroll;
+    height: 30vh;
+    background-color: rgb(226, 226, 78);
+
+}
+
+.findPeoples{
+    height: 50px;
+    /* float: right; */
+    margin-left: 50vw;
+    width: 200px;
+    border-radius: 40px;
+    position: absolute;
+    right: 10px;
+}
+
+/* login portion */
+
+.login{
+    width: 100vw;
+    height: 100vh;
+    background-color: lightblue;
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+    background-color: rgb(2, 56, 56);
+}
+
+.signUpContainer{
+    background-color: purple;
+    height: 64vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.signUp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40vh;
+    background-color: rgb(2, 56, 56);
+    border-bottom: 2px solid black;
+    border-radius: 20px;
+    width: 50vw;
+}
+
+.credInput{
+    height: 5vh;
+    width: 32vw;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+}
+
+.btn{
+    width: 100px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 25px;
+    background: linear-gradient(#d50606, greenyellow);
+    border-radius: 16px;
+}
+
+
+
+
+.opacity{
+    opacity: 0;
+}
+
+/* search and contacts Area */
+
+.kanafusiContainer{
+    z-index: 0;
+    opacity: 0;
+}
+
+.switchAccount{
+    /* background-color: green; */
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+    transition: 0.5s ease-in-out;
+}
+
+.translateSwitch{
+    transform: translate(-140vw, 0px);
+    transition: 0.4s ease-in-out;
+}
+
+.switchInfo{
+    background-color: rgb(235, 235, 66);
+}
+
+.switchText{
+    width: 100%;
+    text-align: center;
+    color: yellow;
+    height: 40px;
+}
+
+.currAccount{
+    width: 16%;
+    border-radius: 32px;
+}
+
+.searchAndContacts{
+    width: 20%;
+    height: 100vh;
+    background-color: wheat;
+}
+
+.searchContacts{
+    width: 100%;
+    height: 8vh;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(241, 241, 103);
+
+}
+
+.searchInput{
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.contactsContainer{
+    overflow: scroll;
+    height: 92vh;
+}
+
+.contactsInfo{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    background-color: greenyellow;
+    font-size: 1.5vw;
+    border-bottom: 0.5px solid black;
+    color: rgb(63, 24, 24);
+    cursor: pointer;
+}
+
+.contactName{
+    margin-left: 8%;
+}
+
+/* Opened contacts */
+
+.openedContactContainer{
+    width: 80%;
+    height: 100vh;
+    background-color: aqua;
+    font-size: 2vw;
+
+}
+
+.aboutOpenedContact{
+    width: 100%;
+    height: 8vh;
+    background-color: rgb(255 255 145);
+    display: flex;
+    align-items: center;
+    transition: 1s ease-in-out;
+}
+
+.viewSize{
+    width: 20%;
+    border-radius: 51px;
+    margin-left: 8%;
+}
+
+.openedContactImage{
+    width: 4%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+/* Char Area */
+
+.chats{
+    width: 100%;
+    height: 84vh;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: scroll;
+}
+
+.chatBox{
+    width: 90%;
+    height: 64%;
+    border-radius: 25px;
+    border: none;
+    font-size: 20px;
+}
+
+.chatDisplayed{
+    width: 100%;
+    border: 0.5px solid grey;
+    margin: 2px 0px;
+}
+
+.senderChat{
+    text-align: right;
+    background-color: rgb(236, 236, 100);
+    float: right;
+    border-radius: 16px;
+    padding: 0px 2vw;
+}
+
+.recieverChat{
+    float: left;
+    background-color: antiquewhite;
+    display: inline;
+    border-radius: 16px;
+    padding: 0px 2vw;
+}
+
+.sendMessage{
+    width: 100%;
+    height: 8vh;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 4px;
+    box-sizing: border-box;
+    text-align: start;
+}
+
+.sendImage{
+    width: 40px;
+    margin-right: 4%;
+}
+
+.exists{
+    color: red;
+    font-size: 25px;
+}
+
+.signedIn{
+    color: green;
+    font-size: 25px;
+}
+
+

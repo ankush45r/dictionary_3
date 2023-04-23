@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: purple;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login--form{
+    width: 50vw;
+    height: 40vh;
+    background-color: grey;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.credInput{
+    width: 32vw;
+    height: 25px;
+    border-radius: 5px;
+    background-color: wheat;
+    text-align: center;
+}
+
+.btn{
+    width: 100px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 25px;
+    background: linear-gradient(#d50606, greenyellow);
+    border-radius: 16px;
+}
+
+.btn--signup--page{
+    width: 15vw;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(48, 48, 75);
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.btn--signup--page:hover{
+    color: white;
+    background-color: rgb(64, 64, 97);
+}
